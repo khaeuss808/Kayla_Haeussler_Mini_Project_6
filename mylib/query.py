@@ -24,7 +24,7 @@ ORDER BY keh.winpercent DESC;
 """
 
 
-def my_query(query):
+def my_query(complex_query):
     """runs a query"""
     load_dotenv()
     server_h = os.getenv("sql_server_host")
