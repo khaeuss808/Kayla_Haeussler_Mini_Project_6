@@ -52,8 +52,10 @@ def load(dataset="data/candy-data.csv"):
             c.execute(
                 """
                 INSERT INTO keh119_Candy (
-                    competitorname, chocolate, fruity, caramel, peanutyalmondy, nougat, 
-                    crispedricewafer, hard, bar, pluribus, sugarpercent, pricepercent, winpercent
+                    competitorname, chocolate, fruity, caramel, 
+                    peanutyalmondy, nougat, 
+                    crispedricewafer, hard, bar, pluribus, 
+                    sugarpercent, pricepercent, winpercent
                 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 tuple(row),
