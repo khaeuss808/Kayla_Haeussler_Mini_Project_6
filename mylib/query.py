@@ -4,6 +4,24 @@ import os
 from databricks import sql
 from dotenv import load_dotenv
 
+complex_query = """
+WITH avg_winpercent AS ( 
+SELECT  
+chocolate, 
+AVG(winpercent) AS choc_nonchoc_win_perc 
+FROM  default.keh119_candy 
+GROUP BY  chocolate 
+) 
+
+SELECT  
+keh.competitorname, 
+keh.winpercent, 
+avg_winpercent.choc_nonchoc_win_perc 
+FROM default.keh119_candy as keh 
+JOIN avg_winpercent 
+ON keh.chocolate = avg_winpercent.chocolate 
+ORDER BY keh.winpercent DESC;  
+"""
 
 def my_query(query):
     """runs a query"""
