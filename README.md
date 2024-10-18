@@ -35,16 +35,32 @@ Kayla_Haeussler_Mini_Project_5/
 └── test_main.py
 ```
 ## Assignment Requirements
-* Connect to a SQL database
-* Perform CRUD operations
-* Write at least two different SQL queries
+* Design a comlpex SQL query involving joins, aggregation and sorting
+* Provide an explanation for what the query is doing and the expected results
 
 ## Data Set
-The data set used in this project comes from the '''fivethirtyeight''' repository, called candy-data.csv, that contains candy power ranking data. 
+The data set used in this project comes from the ```fivethirtyeight``` repository, called candy-data.csv, that contains candy power ranking data. 
 https://github.com/fivethirtyeight/data/tree/master/candy-power-ranking
 
 ## Complex Query
+```
+WITH avg_winpercent AS ( 
+SELECT  
+chocolate, 
+AVG(winpercent) AS choc_nonchoc_win_perc 
+FROM  default.keh119_candy 
+GROUP BY  chocolate 
+) 
 
+SELECT  
+keh.competitorname, 
+keh.winpercent, 
+avg_winpercent.choc_nonchoc_win_perc 
+FROM default.keh119_candy as keh 
+JOIN avg_winpercent 
+ON keh.chocolate = avg_winpercent.chocolate 
+ORDER BY keh.winpercent DESC; 
+```
 
 
 
