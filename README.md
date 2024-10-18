@@ -1,6 +1,6 @@
 # Kayla_Haeussler_MiniProject_6
 
-([![CI](https://github.com/nogibjj/Kayla_Haeussler_Mini_Project_6/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Kayla_Haeussler_Mini_Project_6/actions/workflows/cicd.yml))
+[![CI](https://github.com/nogibjj/Kayla_Haeussler_Mini_Project_6/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Kayla_Haeussler_Mini_Project_6/actions/workflows/cicd.yml)
 
 IDS 706: Mini Project 6
 Complex SQL Query for a MySQL Database (Databricks)
