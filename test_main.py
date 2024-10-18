@@ -1,6 +1,5 @@
 """
 Test goes here
-
 """
 
 from mylib.extract import extract
