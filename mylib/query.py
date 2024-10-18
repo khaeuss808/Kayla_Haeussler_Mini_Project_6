@@ -23,6 +23,7 @@ ON keh.chocolate = avg_winpercent.chocolate
 ORDER BY keh.winpercent DESC;  
 """
 
+
 def my_query(query):
     """runs a query"""
     load_dotenv()
@@ -34,13 +35,18 @@ def my_query(query):
         http_path=http_path,
         access_token=access_token,
     ) as connection:
-        c=connection.cursor()
-        c.execute(
-            WITH 
-        )
-        result = c.fetchall()
-    
-    c.close
+        with connection.cursor() as cursor:
+
+            cursor.execute(complex_query)
+            result = cursor.fetchall()
+
+            for row in result:
+                print(row)
+
+            cursor.close()
+            connection.close()
+    return "query sucessful"
+
 
 if __name__ == "__main__":
- 
+    my_query()
