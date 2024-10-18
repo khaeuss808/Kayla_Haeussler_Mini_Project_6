@@ -61,11 +61,17 @@ ORDER BY keh.winpercent DESC;
 ```
 
 The assignment required us to utilize joins, aggregation and sorting in our query. I wanted to continue using the candy-data.csv I had been using in my previous mini projects, but did not have access to another candy data set that I could logically merge with this one. To solve this issue and successfully fulfill this project's requirements, I created a new data set from candy-data, and called it **avg_winpercent**. This new data set takes two columns from candy-data, **chocolate** and the average of **winpercent**. However by using **GROUP BY**, we tell our query to calculate the average **winpercent** for each level of **chocolate**, the levels being 1 or 0, corresponding to the candy having or not having chocolate. After this part of the query is run we have a 2 row 2 column data set that would look something like this:
-chocolate	choc_nonchoc_win_perc
-1	60.753468407524956
-0	42.14225701491038
 | chocolate           | choc_nonchoc_win_perc            |
 |------------------|---------------------|
 | 1    | 60.753468407524956          |
 | 0     | 42.14225701491038        | 
-| 
+
+The query then joins the columns **competitor name and win percent** from the original candy-data dataset with **choc_nonchoc_win_perc** on the shared column of chocolate, which then joins the corresponding average win percentage of whether or not the candy contains chocolate. We then sort the merged dataset on the original winpercents of each candy from the candy-data data set, in descending order, the first 5 rows of the final result of the query would look like this: 
+
+| competitorname    |winpercent     | choc_nonchoc_win_perc      |
+|------------------|---------------------|---------------------|
+|Reese's Peanut Butter cup|	84.18029022216797|	60.753468407524956
+|Reese's Miniatures	|81.86625671386719|	60.753468407524956
+|Twix	|81.64291381835938|	60.753468407524956
+|Kit Kat	|76.76860046386719	|60.753468407524956
+|Snickers|	76.67378234863281	|60.753468407524956
