@@ -2,8 +2,8 @@
 
 [![CI](https://github.com/nogibjj/Kayla_Haeussler_Mini_Project_6/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Kayla_Haeussler_Mini_Project_6/actions/workflows/cicd.yml)
 
-IDS 706: Mini Project 6
-Complex SQL Query for a MySQL Database (Databricks)
+IDS 706: Mini Project 6  
+Complex SQL Query for a MySQL Database (Databricks)  
 Kayla Haeussler  
 
 ```
@@ -37,8 +37,8 @@ Kayla_Haeussler_Mini_Project_5/
 * Provide an explanation for what the query is doing and the expected results
 
 ## Data Set
-The data set used in this project comes from the ```fivethirtyeight``` repository, called candy-data.csv, that contains candy power ranking data. 
-https://github.com/fivethirtyeight/data/tree/master/candy-power-ranking
+The data set used in this project comes from the ```fivethirtyeight``` repository, called candy-data.csv, that contains candy power ranking data.  
+https://github.com/fivethirtyeight/data/tree/master/candy-power-ranking  
 The data contains the following fields:
 
 Header | Description
