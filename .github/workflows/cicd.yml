@@ -6,26 +6,23 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
-jobs: 
-  build: 
-    strategy:
-      matrix:
-        python-version: [3.7,3.8,3.9,3.11]
-        os: [ubuntu-latest, windows-latest]
-    runs-on: ${{matrix.os}}
-    steps: 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v3
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.9
       - name: install packages
         run: make install
+      - name: format
+        run: make format
       - name: lint
         run: make lint
       - name: test
+        env:
+          DATABRICKS_KEY: ${{ secrets.DATABRICKS_API_KEY}}
+          SERVER_HOSTNAME: ${{ secrets.SQL_SERVER_HOST }}
+          HTTP_PATH: ${{ secrets.SQL_HTTP }}
         run: make test
-      - name: format
-        run: make format
-      - name: deploy
-        run: make deploy
