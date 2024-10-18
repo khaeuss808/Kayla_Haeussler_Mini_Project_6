@@ -23,6 +23,9 @@ def load(dataset="data/candy-data.csv"):
         c = connection.cursor()
         c.execute("SHOW TABLES FROM default LIKE 'keh119*'")
         result = c.fetchall()
+        if result:
+            print("keh119_Candy already exists, skipping data load")
+            return "success"
         if not result:
             c.execute(
                 """
